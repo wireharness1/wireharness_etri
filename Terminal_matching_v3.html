@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminal_matching_v3 module &mdash; Wireharness 1.0.0. documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=58f5e731"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Wire_harness_detection_functions module" href="Wire_harness_detection_functions.html" />
+    <link rel="prev" title="LineMesh_utils module" href="LineMesh_utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Wireharness
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Wire Harness:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="description/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/getting_start.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/feeder.html">Feeder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/board.html">Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/monitoring.html">Monitoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ETRI_FeederDetection.html">ETRI_FeederDetection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html">checker_board_roi_dh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_collect.html">data_collect module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efficientNetWire.html">efficientNetWire module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh.html">LineMesh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh_utils.html">LineMesh_utils module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Terminal_matching_v3 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Terminal_matching_v3.Template_match"><code class="docutils literal notranslate"><span class="pre">Template_match</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Terminal_matching_v3.Template_match.classfify_terminal"><code class="docutils literal notranslate"><span class="pre">Template_match.classfify_terminal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Terminal_matching_v3.Template_match.distance_3D"><code class="docutils literal notranslate"><span class="pre">Template_match.distance_3D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Terminal_matching_v3.Template_match.draw_registration_result"><code class="docutils literal notranslate"><span class="pre">Template_match.draw_registration_result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Terminal_matching_v3.Template_match.draw_registration_result_no_draw"><code class="docutils literal notranslate"><span class="pre">Template_match.draw_registration_result_no_draw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Terminal_matching_v3.Template_match.execute_fast_global_registration"><code class="docutils literal notranslate"><span class="pre">Template_match.execute_fast_global_registration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Terminal_matching_v3.Template_match.execute_global_registration"><code class="docutils literal notranslate"><span class="pre">Template_match.execute_global_registration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Terminal_matching_v3.Template_match.model_matching"><code class="docutils literal notranslate"><span class="pre">Template_match.model_matching()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Terminal_matching_v3.Template_match.prepare_dataset"><code class="docutils literal notranslate"><span class="pre">Template_match.prepare_dataset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Terminal_matching_v3.Template_match.preprocess_point_cloud"><code class="docutils literal notranslate"><span class="pre">Template_match.preprocess_point_cloud()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Terminal_matching_v3.Template_match.refine_registration"><code class="docutils literal notranslate"><span class="pre">Template_match.refine_registration()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Terminal_matching_v3.list_model"><code class="docutils literal notranslate"><span class="pre">list_model</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_functions.html">Wire_harness_detection_functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html">Wire_harness_detection_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html">Wire_harness_detection_utils_KIMM module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Wireharness</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">API</a></li>
+      <li class="breadcrumb-item active">Terminal_matching_v3 module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Terminal_matching_v3.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Terminal_matching_v3">
+<span id="terminal-matching-v3-module"></span><h1>Terminal_matching_v3 module<a class="headerlink" href="#module-Terminal_matching_v3" title="Link to this heading"></a></h1>
+<p>Created on Thu Jul 14 10:43:16 2022</p>
+<p>&#64;author: admin</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Terminal_matching_v3.</span></span><span class="sig-name descname"><span class="pre">Template_match</span></span><a class="headerlink" href="#Terminal_matching_v3.Template_match" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match.classfify_terminal">
+<span class="sig-name descname"><span class="pre">classfify_terminal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_surface_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Terminal_matching_v3.Template_match.classfify_terminal" title="Link to this definition"></a></dt>
+<dd><p>This function takes the list of 3D point clouds from a 3D camera as inputs.
+Initially, it matches it with 3 template models. Finally, it outputs the class
+of each surface and the error of matching times.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_surface_list</strong> (<em>list</em><em>[</em><em>o3d.geometry.PointCloud</em><em>]</em>) – List of point clouds of the terminal from the 3D camera.</p></li>
+<li><p><strong>visualize</strong> (<em>int</em>) – If 1, displays the matching results; if 0, does not display. Defaults to 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of terminal classes for the inputted surface list and the error list from multiple matching results.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match.distance_3D">
+<span class="sig-name descname"><span class="pre">distance_3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Terminal_matching_v3.Template_match.distance_3D" title="Link to this definition"></a></dt>
+<dd><p>This function calculates the Euclidean distance between two 3D points.
+It computes the distance using the formula for the Euclidean distance in a 3-dimensional space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<em>tuple</em><em> or </em><em>list</em>) – The first point in 3D space, represented as a tuple or list with three elements (x1, y1, z1).</p></li>
+<li><p><strong>p2</strong> (<em>tuple</em><em> or </em><em>list</em>) – The second point in 3D space, represented as a tuple or list with three elements (x2, y2, z2).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Euclidean distance between point p1 and point p2.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match.draw_registration_result">
+<span class="sig-name descname"><span class="pre">draw_registration_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Terminal_matching_v3.Template_match.draw_registration_result" title="Link to this definition"></a></dt>
+<dd><p>This function takes two point clouds and the transformation as inputs,
+and then transforms the surface point cloud and shows it together with the model point cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface</strong> (<em>o3d.geometry.PointCloud</em>) – Point cloud of the terminal from the 3D camera.</p></li>
+<li><p><strong>model</strong> (<em>o3d.geometry.PointCloud</em>) – Point cloud of the terminal from the template.</p></li>
+<li><p><strong>transformation</strong> (<em>np.ndarray</em>) – Transformation matrix for the surface point cloud.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Transformed point cloud”
+model_temp: original point cloud of terminal”</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>surface_temp</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match.draw_registration_result_no_draw">
+<span class="sig-name descname"><span class="pre">draw_registration_result_no_draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Terminal_matching_v3.Template_match.draw_registration_result_no_draw" title="Link to this definition"></a></dt>
+<dd><p>This function takes two point clouds and the transformation as inputs,
+and then transforms the surface point cloud without displaying it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface</strong> (<em>o3d.geometry.PointCloud</em>) – Point cloud of the terminal from the 3D camera.</p></li>
+<li><p><strong>model</strong> (<em>o3d.geometry.PointCloud</em>) – Point cloud of the terminal from the template.</p></li>
+<li><p><strong>transformation</strong> (<em>np.ndarray</em>) – Transformation matrix for the surface point cloud.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Transformed surface point cloud and original model point cloud.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match.execute_fast_global_registration">
+<span class="sig-name descname"><span class="pre">execute_fast_global_registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surface_down</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_down</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surface_fpfh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_fpfh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxel_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Terminal_matching_v3.Template_match.execute_fast_global_registration" title="Link to this definition"></a></dt>
+<dd><p>This function performs fast global registration between the downsampled surface and model point clouds.
+It uses FPFH features and an optimized algorithm for quick alignment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface_down</strong> (<em>o3d.geometry.PointCloud</em>) – Downsampled surface point cloud.</p></li>
+<li><p><strong>model_down</strong> (<em>o3d.geometry.PointCloud</em>) – Downsampled model point cloud.</p></li>
+<li><p><strong>surface_fpfh</strong> (<em>o3d.registration.Feature</em>) – FPFH features of the downsampled surface point cloud.</p></li>
+<li><p><strong>model_fpfh</strong> (<em>o3d.registration.Feature</em>) – FPFH features of the downsampled model point cloud.</p></li>
+<li><p><strong>voxel_size</strong> (<em>float</em>) – The size of the voxel grid used for downsampling.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the fast global registration, including the transformation matrix and fitness score.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>o3d.registration.RegistrationResult</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match.execute_global_registration">
+<span class="sig-name descname"><span class="pre">execute_global_registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surface_down</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_down</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surface_fpfh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_fpfh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxel_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Terminal_matching_v3.Template_match.execute_global_registration" title="Link to this definition"></a></dt>
+<dd><p>This function performs global registration between the downsampled surface and model point clouds using RANSAC.
+It uses FPFH features for matching and estimates a rough alignment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface_down</strong> (<em>o3d.geometry.PointCloud</em>) – Downsampled surface point cloud.</p></li>
+<li><p><strong>model_down</strong> (<em>o3d.geometry.PointCloud</em>) – Downsampled model point cloud.</p></li>
+<li><p><strong>surface_fpfh</strong> (<em>o3d.registration.Feature</em>) – FPFH features of the downsampled surface point cloud.</p></li>
+<li><p><strong>model_fpfh</strong> (<em>o3d.registration.Feature</em>) – FPFH features of the downsampled model point cloud.</p></li>
+<li><p><strong>voxel_size</strong> (<em>float</em>) – The size of the voxel grid used for downsampling.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the RANSAC-based registration, including the transformation matrix and fitness score.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>o3d.registration.RegistrationResult</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match.model_matching">
+<span class="sig-name descname"><span class="pre">model_matching</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_surface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Terminal_matching_v3.Template_match.model_matching" title="Link to this definition"></a></dt>
+<dd><p>This function takes two inputs. One is the point cloud from a 3D camera,
+and the other is the point cloud from the templates. This function matches
+after setting multiple initial positions around the template for the first point cloud.
+Finally, it outputs the error list and the minimum error from multiple matching results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_surface</strong> (<em>o3d.geometry.PointCloud</em>) – Point cloud of the terminal from the 3D camera.</p></li>
+<li><p><strong>input_model</strong> (<em>o3d.geometry.PointCloud</em>) – Point cloud of the terminal from the template.</p></li>
+<li><p><strong>visualize</strong> (<em>int</em>) – If 1, displays the matching results; if 0, does not display. Defaults to 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Minimum error among the multiple matching results and the error list from multiple matching results.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match.prepare_dataset">
+<span class="sig-name descname"><span class="pre">prepare_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voxel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Terminal_matching_v3.Template_match.prepare_dataset" title="Link to this definition"></a></dt>
+<dd><p>This function prepares the dataset for registration by transforming the surface point cloud,
+preprocessing both surface and model point clouds, and computing their FPFH features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>voxel_size</strong> (<em>float</em>) – The size of the voxel grid used for downsampling.</p></li>
+<li><p><strong>surface</strong> (<em>o3d.geometry.PointCloud</em>) – The surface point cloud to be aligned.</p></li>
+<li><p><strong>model</strong> (<em>o3d.geometry.PointCloud</em>) – The model point cloud used as a reference.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Transformed surface point cloud, original model point cloud,</dt><dd><p>downsampled surface point cloud, downsampled model point cloud,
+FPFH features of the downsampled surface point cloud, and
+FPFH features of the downsampled model point cloud.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match.preprocess_point_cloud">
+<span class="sig-name descname"><span class="pre">preprocess_point_cloud</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxel_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Terminal_matching_v3.Template_match.preprocess_point_cloud" title="Link to this definition"></a></dt>
+<dd><p>This function preprocesses the input point cloud for further registration tasks.
+It downsamples the point cloud, estimates normals, and computes FPFH (Fast Point Feature Histograms) features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd</strong> (<em>o3d.geometry.PointCloud</em>) – The input point cloud to be processed.</p></li>
+<li><p><strong>voxel_size</strong> (<em>float</em>) – The size of the voxel grid used for downsampling.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The downsampled point cloud and the FPFH features of the downsampled point cloud.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Terminal_matching_v3.Template_match.refine_registration">
+<span class="sig-name descname"><span class="pre">refine_registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surface_fpfh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_fpfh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Terminal_matching_v3.Template_match.refine_registration" title="Link to this definition"></a></dt>
+<dd><p>This function performs registration refinement between two point clouds using the ICP algorithm.
+The function refines the alignment of the ‘surface’ point cloud with the ‘model’ point cloud
+by iteratively minimizing the point-to-plane distance between them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface</strong> (<em>o3d.geometry.PointCloud</em>) – Point cloud of the surface scanned from the 3D camera.</p></li>
+<li><p><strong>model</strong> (<em>o3d.geometry.PointCloud</em>) – Point cloud of the model template.</p></li>
+<li><p><strong>surface_fpfh</strong> (<em>o3d.registration.Feature</em>) – Fast Point Feature Histograms of the surface point cloud (not used directly in this function).</p></li>
+<li><p><strong>model_fpfh</strong> (<em>o3d.registration.Feature</em>) – Fast Point Feature Histograms of the model point cloud (not used directly in this function).</p></li>
+<li><p><strong>voxel_size</strong> (<em>float</em>) – Voxel size used to downsample the point clouds (used here as the distance threshold).</p></li>
+<li><p><strong>trans_init</strong> (<em>np.ndarray</em>) – Initial transformation matrix to align the surface point cloud to the model point cloud.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the ICP registration containing the refined transformation matrix and fitness score.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>o3d.registration.RegistrationResult</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="Terminal_matching_v3.list_model">
+<span class="sig-prename descclassname"><span class="pre">Terminal_matching_v3.</span></span><span class="sig-name descname"><span class="pre">list_model</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[PointCloud</span> <span class="pre">with</span> <span class="pre">0</span> <span class="pre">points.,</span> <span class="pre">PointCloud</span> <span class="pre">with</span> <span class="pre">0</span> <span class="pre">points.,</span> <span class="pre">PointCloud</span> <span class="pre">with</span> <span class="pre">0</span> <span class="pre">points.]</span></em><a class="headerlink" href="#Terminal_matching_v3.list_model" title="Link to this definition"></a></dt>
+<dd><p>This class specifies to functions used for matching between the inputed point</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="LineMesh_utils.html" class="btn btn-neutral float-left" title="LineMesh_utils module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Wire_harness_detection_functions.html" class="btn btn-neutral float-right" title="Wire_harness_detection_functions module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ETRI.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

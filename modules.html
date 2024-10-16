@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API &mdash; Wireharness 1.0.0. documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=58f5e731"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ETRI_FeederDetection module" href="ETRI_FeederDetection.html" />
+    <link rel="prev" title="Monitoring" href="description/monitoring.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Wireharness
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Wire Harness:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="description/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/getting_start.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/feeder.html">Feeder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/board.html">Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/monitoring.html">Monitoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ETRI_FeederDetection.html">ETRI_FeederDetection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html">checker_board_roi_dh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_collect.html">data_collect module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efficientNetWire.html">efficientNetWire module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh.html">LineMesh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh_utils.html">LineMesh_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Terminal_matching_v3.html">Terminal_matching_v3 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_functions.html">Wire_harness_detection_functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html">Wire_harness_detection_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html">Wire_harness_detection_utils_KIMM module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Wireharness</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ETRI_FeederDetection.html">ETRI_FeederDetection module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection"><code class="docutils literal notranslate"><span class="pre">FeederDetection</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.camera_capture"><code class="docutils literal notranslate"><span class="pre">FeederDetection.camera_capture()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.classify_cable"><code class="docutils literal notranslate"><span class="pre">FeederDetection.classify_cable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.convert_zdf2data"><code class="docutils literal notranslate"><span class="pre">FeederDetection.convert_zdf2data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.detect_main"><code class="docutils literal notranslate"><span class="pre">FeederDetection.detect_main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.display_inlier_outlier"><code class="docutils literal notranslate"><span class="pre">FeederDetection.display_inlier_outlier()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.find_boundary_and_vector_point"><code class="docutils literal notranslate"><span class="pre">FeederDetection.find_boundary_and_vector_point()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.find_picking_point"><code class="docutils literal notranslate"><span class="pre">FeederDetection.find_picking_point()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.get_connector_roi"><code class="docutils literal notranslate"><span class="pre">FeederDetection.get_connector_roi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.init_detector"><code class="docutils literal notranslate"><span class="pre">FeederDetection.init_detector()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.load_model"><code class="docutils literal notranslate"><span class="pre">FeederDetection.load_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.o3d_dbscan_clustering"><code class="docutils literal notranslate"><span class="pre">FeederDetection.o3d_dbscan_clustering()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.poly_to_o3d"><code class="docutils literal notranslate"><span class="pre">FeederDetection.poly_to_o3d()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.predict"><code class="docutils literal notranslate"><span class="pre">FeederDetection.predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.predict_single_image"><code class="docutils literal notranslate"><span class="pre">FeederDetection.predict_single_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.read_parameter"><code class="docutils literal notranslate"><span class="pre">FeederDetection.read_parameter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.result_save"><code class="docutils literal notranslate"><span class="pre">FeederDetection.result_save()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.set_camera_calib_params"><code class="docutils literal notranslate"><span class="pre">FeederDetection.set_camera_calib_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.set_roi"><code class="docutils literal notranslate"><span class="pre">FeederDetection.set_roi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.show_pcd"><code class="docutils literal notranslate"><span class="pre">FeederDetection.show_pcd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.sk_dbscan_clustering"><code class="docutils literal notranslate"><span class="pre">FeederDetection.sk_dbscan_clustering()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.FeederDetection.statical_outlier_removal"><code class="docutils literal notranslate"><span class="pre">FeederDetection.statical_outlier_removal()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ETRI_FeederDetection.html#ETRI_FeederDetection.measure_time"><code class="docutils literal notranslate"><span class="pre">measure_time()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="checker_board_roi_dh.html">checker_board_roi_dh module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html#checker_board_roi_dh.change_ref_frame_for_position"><code class="docutils literal notranslate"><span class="pre">change_ref_frame_for_position()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html#checker_board_roi_dh.draw_results"><code class="docutils literal notranslate"><span class="pre">draw_results()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html#checker_board_roi_dh.get_roi_filtered_pcd_with_checkerboard"><code class="docutils literal notranslate"><span class="pre">get_roi_filtered_pcd_with_checkerboard()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html#checker_board_roi_dh.load_camera_to_checkerboard_matrix"><code class="docutils literal notranslate"><span class="pre">load_camera_to_checkerboard_matrix()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html#checker_board_roi_dh.roi_box_feeder"><code class="docutils literal notranslate"><span class="pre">roi_box_feeder()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html#checker_board_roi_dh.roi_box_pcd"><code class="docutils literal notranslate"><span class="pre">roi_box_pcd()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html#checker_board_roi_dh.roi_test"><code class="docutils literal notranslate"><span class="pre">roi_test()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_collect.html">data_collect module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_collect.html#data_collect.DataCollect"><code class="docutils literal notranslate"><span class="pre">DataCollect</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_collect.html#data_collect.DataCollect.collect_data"><code class="docutils literal notranslate"><span class="pre">DataCollect.collect_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_collect.html#data_collect.DataCollect.data_collect"><code class="docutils literal notranslate"><span class="pre">DataCollect.data_collect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_collect.html#data_collect.DataCollect.img_augment"><code class="docutils literal notranslate"><span class="pre">DataCollect.img_augment()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_collect.html#data_collect.DataCollect.initUi"><code class="docutils literal notranslate"><span class="pre">DataCollect.initUi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_collect.html#data_collect.DataCollect.save_images"><code class="docutils literal notranslate"><span class="pre">DataCollect.save_images()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_collect.html#data_collect.DataCollect.set_path"><code class="docutils literal notranslate"><span class="pre">DataCollect.set_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_collect.html#data_collect.DataCollect.sk_dbscan_clustering"><code class="docutils literal notranslate"><span class="pre">DataCollect.sk_dbscan_clustering()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="efficientNetWire.html">efficientNetWire module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.EfficientNetWire"><code class="docutils literal notranslate"><span class="pre">EfficientNetWire</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.EfficientNetWire.log_signal"><code class="docutils literal notranslate"><span class="pre">EfficientNetWire.log_signal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.EfficientNetWire.plot_confusion"><code class="docutils literal notranslate"><span class="pre">EfficientNetWire.plot_confusion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.EfficientNetWire.plot_confusion_matrix"><code class="docutils literal notranslate"><span class="pre">EfficientNetWire.plot_confusion_matrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.EfficientNetWire.plot_graphs"><code class="docutils literal notranslate"><span class="pre">EfficientNetWire.plot_graphs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.EfficientNetWire.plot_signal"><code class="docutils literal notranslate"><span class="pre">EfficientNetWire.plot_signal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.EfficientNetWire.run"><code class="docutils literal notranslate"><span class="pre">EfficientNetWire.run()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.EfficientNetWire.test"><code class="docutils literal notranslate"><span class="pre">EfficientNetWire.test()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.EfficientNetWire.train"><code class="docutils literal notranslate"><span class="pre">EfficientNetWire.train()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.EfficientNetWire.validate"><code class="docutils literal notranslate"><span class="pre">EfficientNetWire.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.LogThread"><code class="docutils literal notranslate"><span class="pre">LogThread</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.LogThread.finish_signal"><code class="docutils literal notranslate"><span class="pre">LogThread.finish_signal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.LogThread.run"><code class="docutils literal notranslate"><span class="pre">LogThread.run()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.LogThread.stop"><code class="docutils literal notranslate"><span class="pre">LogThread.stop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.LogThread.update_signal"><code class="docutils literal notranslate"><span class="pre">LogThread.update_signal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.SplitData"><code class="docutils literal notranslate"><span class="pre">SplitData</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.SplitData.split_data"><code class="docutils literal notranslate"><span class="pre">SplitData.split_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.TrainingDlg"><code class="docutils literal notranslate"><span class="pre">TrainingDlg</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.TrainingDlg.add_classes"><code class="docutils literal notranslate"><span class="pre">TrainingDlg.add_classes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.TrainingDlg.clear_classes"><code class="docutils literal notranslate"><span class="pre">TrainingDlg.clear_classes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.TrainingDlg.initUi"><code class="docutils literal notranslate"><span class="pre">TrainingDlg.initUi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.TrainingDlg.set_path"><code class="docutils literal notranslate"><span class="pre">TrainingDlg.set_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.TrainingDlg.split_data"><code class="docutils literal notranslate"><span class="pre">TrainingDlg.split_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.TrainingDlg.train_finished"><code class="docutils literal notranslate"><span class="pre">TrainingDlg.train_finished()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.TrainingDlg.train_start"><code class="docutils literal notranslate"><span class="pre">TrainingDlg.train_start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="efficientNetWire.html#efficientNetWire.TrainingDlg.training_log"><code class="docutils literal notranslate"><span class="pre">TrainingDlg.training_log()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="LineMesh.html">LineMesh module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh.html#LineMesh.LineMesh"><code class="docutils literal notranslate"><span class="pre">LineMesh</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="LineMesh.html#LineMesh.LineMesh.add_line"><code class="docutils literal notranslate"><span class="pre">LineMesh.add_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="LineMesh.html#LineMesh.LineMesh.create_line_mesh"><code class="docutils literal notranslate"><span class="pre">LineMesh.create_line_mesh()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="LineMesh.html#LineMesh.LineMesh.lines_from_ordered_points"><code class="docutils literal notranslate"><span class="pre">LineMesh.lines_from_ordered_points()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="LineMesh.html#LineMesh.LineMesh.remove_line"><code class="docutils literal notranslate"><span class="pre">LineMesh.remove_line()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh.html#LineMesh.align_vector_to_another"><code class="docutils literal notranslate"><span class="pre">align_vector_to_another()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh.html#LineMesh.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh.html#LineMesh.normalized"><code class="docutils literal notranslate"><span class="pre">normalized()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="LineMesh_utils.html">LineMesh_utils module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh_utils.html#LineMesh_utils.LineMesh"><code class="docutils literal notranslate"><span class="pre">LineMesh</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="LineMesh_utils.html#LineMesh_utils.LineMesh.add_line"><code class="docutils literal notranslate"><span class="pre">LineMesh.add_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="LineMesh_utils.html#LineMesh_utils.LineMesh.create_line_mesh"><code class="docutils literal notranslate"><span class="pre">LineMesh.create_line_mesh()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="LineMesh_utils.html#LineMesh_utils.LineMesh.lines_from_ordered_points"><code class="docutils literal notranslate"><span class="pre">LineMesh.lines_from_ordered_points()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="LineMesh_utils.html#LineMesh_utils.LineMesh.remove_line"><code class="docutils literal notranslate"><span class="pre">LineMesh.remove_line()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh_utils.html#LineMesh_utils.align_vector_to_another"><code class="docutils literal notranslate"><span class="pre">align_vector_to_another()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh_utils.html#LineMesh_utils.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh_utils.html#LineMesh_utils.normalized"><code class="docutils literal notranslate"><span class="pre">normalized()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Terminal_matching_v3.html">Terminal_matching_v3 module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match"><code class="docutils literal notranslate"><span class="pre">Template_match</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match.classfify_terminal"><code class="docutils literal notranslate"><span class="pre">Template_match.classfify_terminal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match.distance_3D"><code class="docutils literal notranslate"><span class="pre">Template_match.distance_3D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match.draw_registration_result"><code class="docutils literal notranslate"><span class="pre">Template_match.draw_registration_result()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match.draw_registration_result_no_draw"><code class="docutils literal notranslate"><span class="pre">Template_match.draw_registration_result_no_draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match.execute_fast_global_registration"><code class="docutils literal notranslate"><span class="pre">Template_match.execute_fast_global_registration()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match.execute_global_registration"><code class="docutils literal notranslate"><span class="pre">Template_match.execute_global_registration()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match.model_matching"><code class="docutils literal notranslate"><span class="pre">Template_match.model_matching()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match.prepare_dataset"><code class="docutils literal notranslate"><span class="pre">Template_match.prepare_dataset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match.preprocess_point_cloud"><code class="docutils literal notranslate"><span class="pre">Template_match.preprocess_point_cloud()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.Template_match.refine_registration"><code class="docutils literal notranslate"><span class="pre">Template_match.refine_registration()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Terminal_matching_v3.html#Terminal_matching_v3.list_model"><code class="docutils literal notranslate"><span class="pre">list_model</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Wire_harness_detection_functions.html">Wire_harness_detection_functions module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_functions.html#Wire_harness_detection_functions.Convert_to_poses"><code class="docutils literal notranslate"><span class="pre">Convert_to_poses()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_functions.html#Wire_harness_detection_functions.Detect_D1C1_wire_onboard"><code class="docutils literal notranslate"><span class="pre">Detect_D1C1_wire_onboard()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_functions.html#Wire_harness_detection_functions.Detect_D1C2_wire_onboard"><code class="docutils literal notranslate"><span class="pre">Detect_D1C2_wire_onboard()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_functions.html#Wire_harness_detection_functions.Detect_wire_v2"><code class="docutils literal notranslate"><span class="pre">Detect_wire_v2()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_functions.html#Wire_harness_detection_functions.ROI_center_extraction"><code class="docutils literal notranslate"><span class="pre">ROI_center_extraction()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Wire_harness_detection_utils.html">Wire_harness_detection_utils module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.angle_2vec_3D"><code class="docutils literal notranslate"><span class="pre">angle_2vec_3D()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.check_n_neighor"><code class="docutils literal notranslate"><span class="pre">check_n_neighor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.check_terminal_size"><code class="docutils literal notranslate"><span class="pre">check_terminal_size()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.distance_3D"><code class="docutils literal notranslate"><span class="pre">distance_3D()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.eliminate_background"><code class="docutils literal notranslate"><span class="pre">eliminate_background()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.eliminate_background_v2"><code class="docutils literal notranslate"><span class="pre">eliminate_background_v2()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.extract_points_from_color"><code class="docutils literal notranslate"><span class="pre">extract_points_from_color()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.extract_points_from_color_knn"><code class="docutils literal notranslate"><span class="pre">extract_points_from_color_knn()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.neighbor_chosen_arc_angle"><code class="docutils literal notranslate"><span class="pre">neighbor_chosen_arc_angle()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.remove_outlier"><code class="docutils literal notranslate"><span class="pre">remove_outlier()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.split_terminal_and_wire"><code class="docutils literal notranslate"><span class="pre">split_terminal_and_wire()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html#Wire_harness_detection_utils.track_wire_profile"><code class="docutils literal notranslate"><span class="pre">track_wire_profile()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html">Wire_harness_detection_utils_KIMM module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.Check_points_in_contour"><code class="docutils literal notranslate"><span class="pre">Check_points_in_contour()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.Detect_contour"><code class="docutils literal notranslate"><span class="pre">Detect_contour()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.angle_2vec_3D"><code class="docutils literal notranslate"><span class="pre">angle_2vec_3D()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.check_n_neighor"><code class="docutils literal notranslate"><span class="pre">check_n_neighor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.check_start_points"><code class="docutils literal notranslate"><span class="pre">check_start_points()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.check_terminal_size"><code class="docutils literal notranslate"><span class="pre">check_terminal_size()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.distance_3D"><code class="docutils literal notranslate"><span class="pre">distance_3D()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.eliminate_background_v2"><code class="docutils literal notranslate"><span class="pre">eliminate_background_v2()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.eliminate_background_v3"><code class="docutils literal notranslate"><span class="pre">eliminate_background_v3()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.eliminate_background_v4"><code class="docutils literal notranslate"><span class="pre">eliminate_background_v4()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.extract_points_from_color"><code class="docutils literal notranslate"><span class="pre">extract_points_from_color()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.extract_points_from_color_knn"><code class="docutils literal notranslate"><span class="pre">extract_points_from_color_knn()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.largest_cluster_point_cloud"><code class="docutils literal notranslate"><span class="pre">largest_cluster_point_cloud()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.mean_distance_to_point"><code class="docutils literal notranslate"><span class="pre">mean_distance_to_point()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.neighbor_chosen_arc_angle"><code class="docutils literal notranslate"><span class="pre">neighbor_chosen_arc_angle()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.remove_outlier"><code class="docutils literal notranslate"><span class="pre">remove_outlier()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.split_terminal_and_wire"><code class="docutils literal notranslate"><span class="pre">split_terminal_and_wire()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.split_terminal_and_wire_v2"><code class="docutils literal notranslate"><span class="pre">split_terminal_and_wire_v2()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.track_wire_profile"><code class="docutils literal notranslate"><span class="pre">track_wire_profile()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html#Wire_harness_detection_utils_KIMM.wire_pcd_to_2D"><code class="docutils literal notranslate"><span class="pre">wire_pcd_to_2D()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="description/monitoring.html" class="btn btn-neutral float-left" title="Monitoring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ETRI_FeederDetection.html" class="btn btn-neutral float-right" title="ETRI_FeederDetection module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ETRI.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

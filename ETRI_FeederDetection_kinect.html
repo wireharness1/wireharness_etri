@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ETRI_FeederDetection_kinect module &mdash; Wireharness 1.0.0. documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=58f5e731"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Wireharness
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Wire Harness:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="description/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/getting_start.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/feeder.html">Feeder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/board.html">Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/monitoring.html">Monitoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Wireharness</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ETRI_FeederDetection_kinect module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ETRI_FeederDetection_kinect.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ETRI_FeederDetection_kinect">
+<span id="etri-feederdetection-kinect-module"></span><h1>ETRI_FeederDetection_kinect module<a class="headerlink" href="#module-ETRI_FeederDetection_kinect" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ETRI_FeederDetection_kinect.</span></span><span class="sig-name descname"><span class="pre">FeederDetection</span></span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.camera_capture">
+<span class="sig-name descname"><span class="pre">camera_capture</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.camera_capture" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.classify_cable">
+<span class="sig-name descname"><span class="pre">classify_cable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd_clusters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_clusters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nCableID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_prediction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.classify_cable" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.convert_zdf2data">
+<span class="sig-name descname"><span class="pre">convert_zdf2data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.convert_zdf2data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.detect_main">
+<span class="sig-name descname"><span class="pre">detect_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nCableID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nArea</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.detect_main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.display_inlier_outlier">
+<span class="sig-name descname"><span class="pre">display_inlier_outlier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cloud</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.display_inlier_outlier" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.find_boundary_and_vector_point">
+<span class="sig-name descname"><span class="pre">find_boundary_and_vector_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcd_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nArea</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.find_boundary_and_vector_point" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.find_picking_point">
+<span class="sig-name descname"><span class="pre">find_picking_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nArea</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_result</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.find_picking_point" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.get_connector_roi">
+<span class="sig-name descname"><span class="pre">get_connector_roi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nCableID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pcd_clusters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.get_connector_roi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.init_detector">
+<span class="sig-name descname"><span class="pre">init_detector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ENV</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.init_detector" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.load_model">
+<span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.load_model" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.o3d_dbscan_clustering">
+<span class="sig-name descname"><span class="pre">o3d_dbscan_clustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points_dbscan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.o3d_dbscan_clustering" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.poly_to_o3d">
+<span class="sig-name descname"><span class="pre">poly_to_o3d</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.poly_to_o3d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.predict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.predict_single_image">
+<span class="sig-name descname"><span class="pre">predict_single_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.predict_single_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.read_parameter">
+<span class="sig-name descname"><span class="pre">read_parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.read_parameter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.result_save">
+<span class="sig-name descname"><span class="pre">result_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nCableID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">result_pcds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.result_save" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.set_camera_calib_params">
+<span class="sig-name descname"><span class="pre">set_camera_calib_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intrinsic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distortion</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.set_camera_calib_params" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.set_roi">
+<span class="sig-name descname"><span class="pre">set_roi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.set_roi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.show_pcd">
+<span class="sig-name descname"><span class="pre">show_pcd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pcds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edit_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.show_pcd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.sk_dbscan_clustering">
+<span class="sig-name descname"><span class="pre">sk_dbscan_clustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points_dbscan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.sk_dbscan_clustering" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.FeederDetection.statical_outlier_removal">
+<span class="sig-name descname"><span class="pre">statical_outlier_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.FeederDetection.statical_outlier_removal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.measure_time">
+<span class="sig-prename descclassname"><span class="pre">ETRI_FeederDetection_kinect.</span></span><span class="sig-name descname"><span class="pre">measure_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.measure_time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ETRI_FeederDetection_kinect.rotation_matrix_from_vectors">
+<span class="sig-prename descclassname"><span class="pre">ETRI_FeederDetection_kinect.</span></span><span class="sig-name descname"><span class="pre">rotation_matrix_from_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection_kinect.rotation_matrix_from_vectors" title="Link to this definition"></a></dt>
+<dd><p>Find the rotation matrix that aligns vec1 to vec2
+:param vec1: A 3d “source” vector
+:param vec2: A 3d “destination” vector
+:return mat: A transform matrix (3x3) which when applied to vec1, aligns it with vec2.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ETRI.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

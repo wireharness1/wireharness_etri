@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wire_harness_detection_utils_KIMM module &mdash; Wireharness 1.0.0. documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=58f5e731"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Wire_harness_detection_utils module" href="Wire_harness_detection_utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Wireharness
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Wire Harness:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="description/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/getting_start.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/feeder.html">Feeder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/board.html">Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/monitoring.html">Monitoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ETRI_FeederDetection.html">ETRI_FeederDetection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html">checker_board_roi_dh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_collect.html">data_collect module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efficientNetWire.html">efficientNetWire module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh.html">LineMesh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh_utils.html">LineMesh_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Terminal_matching_v3.html">Terminal_matching_v3 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_functions.html">Wire_harness_detection_functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html">Wire_harness_detection_utils module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Wire_harness_detection_utils_KIMM module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.Check_points_in_contour"><code class="docutils literal notranslate"><span class="pre">Check_points_in_contour()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.Detect_contour"><code class="docutils literal notranslate"><span class="pre">Detect_contour()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.angle_2vec_3D"><code class="docutils literal notranslate"><span class="pre">angle_2vec_3D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.check_n_neighor"><code class="docutils literal notranslate"><span class="pre">check_n_neighor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.check_start_points"><code class="docutils literal notranslate"><span class="pre">check_start_points()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.check_terminal_size"><code class="docutils literal notranslate"><span class="pre">check_terminal_size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.distance_3D"><code class="docutils literal notranslate"><span class="pre">distance_3D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.eliminate_background_v2"><code class="docutils literal notranslate"><span class="pre">eliminate_background_v2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.eliminate_background_v3"><code class="docutils literal notranslate"><span class="pre">eliminate_background_v3()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.eliminate_background_v4"><code class="docutils literal notranslate"><span class="pre">eliminate_background_v4()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.extract_points_from_color"><code class="docutils literal notranslate"><span class="pre">extract_points_from_color()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.extract_points_from_color_knn"><code class="docutils literal notranslate"><span class="pre">extract_points_from_color_knn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.largest_cluster_point_cloud"><code class="docutils literal notranslate"><span class="pre">largest_cluster_point_cloud()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.mean_distance_to_point"><code class="docutils literal notranslate"><span class="pre">mean_distance_to_point()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.neighbor_chosen_arc_angle"><code class="docutils literal notranslate"><span class="pre">neighbor_chosen_arc_angle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.remove_outlier"><code class="docutils literal notranslate"><span class="pre">remove_outlier()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.split_terminal_and_wire"><code class="docutils literal notranslate"><span class="pre">split_terminal_and_wire()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.split_terminal_and_wire_v2"><code class="docutils literal notranslate"><span class="pre">split_terminal_and_wire_v2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.track_wire_profile"><code class="docutils literal notranslate"><span class="pre">track_wire_profile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_utils_KIMM.wire_pcd_to_2D"><code class="docutils literal notranslate"><span class="pre">wire_pcd_to_2D()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Wireharness</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">API</a></li>
+      <li class="breadcrumb-item active">Wire_harness_detection_utils_KIMM module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Wire_harness_detection_utils_KIMM.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Wire_harness_detection_utils_KIMM">
+<span id="wire-harness-detection-utils-kimm-module"></span><h1>Wire_harness_detection_utils_KIMM module<a class="headerlink" href="#module-Wire_harness_detection_utils_KIMM" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.Check_points_in_contour">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">Check_points_in_contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contours_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.Check_points_in_contour" title="Link to this definition"></a></dt>
+<dd><p>From the inputted point array, this function will find points that</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.Detect_contour">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">Detect_contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary_image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.Detect_contour" title="Link to this definition"></a></dt>
+<dd><p>This function finds contours in inputed binary image and exclude ones</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.angle_2vec_3D">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">angle_2vec_3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.angle_2vec_3D" title="Link to this definition"></a></dt>
+<dd><p>This function calculate the angles between two 3D vectors</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.check_n_neighor">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">check_n_neighor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neighbor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.check_n_neighor" title="Link to this definition"></a></dt>
+<dd><p>This function will collect the neighboring points around a start point</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.check_start_points">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">check_start_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord_axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.check_start_points" title="Link to this definition"></a></dt>
+<dd><p>In case if there is not specific start point for tracking, this function</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.check_terminal_size">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">check_terminal_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[50,</span> <span class="pre">50]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.check_terminal_size" title="Link to this definition"></a></dt>
+<dd><p>This function verifies if the point cloud of the terminal inputted has</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.distance_3D">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">distance_3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.distance_3D" title="Link to this definition"></a></dt>
+<dd><p>This function calculates the distance between 2 points in 3D</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.eliminate_background_v2">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">eliminate_background_v2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.eliminate_background_v2" title="Link to this definition"></a></dt>
+<dd><p>Eliminate the background one time based on one plane segmentation and</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.eliminate_background_v3">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">eliminate_background_v3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.eliminate_background_v3" title="Link to this definition"></a></dt>
+<dd><p>Eliminate the background one time based on multiple plane segmentation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.eliminate_background_v4">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">eliminate_background_v4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.eliminate_background_v4" title="Link to this definition"></a></dt>
+<dd><p>Eliminate the background one time based on multiple plane segmentation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.extract_points_from_color">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">extract_points_from_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.extract_points_from_color" title="Link to this definition"></a></dt>
+<dd><p>This function takes a point cloud as a input, and classify every point</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.extract_points_from_color_knn">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">extract_points_from_color_knn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.extract_points_from_color_knn" title="Link to this definition"></a></dt>
+<dd><p>This function takes a point cloud as a input, and classify every point</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.largest_cluster_point_cloud">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">largest_cluster_point_cloud</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.largest_cluster_point_cloud" title="Link to this definition"></a></dt>
+<dd><p>Clusters the input point cloud using DBSCAN and returns the largest clustered point cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – The input point cloud.</p></li>
+<li><p><strong>eps</strong> (<em>float</em>) – The distance threshold between points in a cluster.</p></li>
+<li><p><strong>min_points</strong> (<em>int</em>) – The minimum number of points to form a cluster.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The largest clustered point cloud.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>open3d.geometry.PointCloud</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.mean_distance_to_point">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">mean_distance_to_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.mean_distance_to_point" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.neighbor_chosen_arc_angle">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">neighbor_chosen_arc_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexes_neigh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_pre</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_pre</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.neighbor_chosen_arc_angle" title="Link to this definition"></a></dt>
+<dd><p>This function is for re-checking the neighboring point based on the</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.remove_outlier">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">remove_outlier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.remove_outlier" title="Link to this definition"></a></dt>
+<dd><p>This function removes the outlier from the point cloud</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.split_terminal_and_wire">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">split_terminal_and_wire</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color_cloud_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.split_terminal_and_wire" title="Link to this definition"></a></dt>
+<dd><p>This function takes the list of point cloud already seperated by colors,</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.split_terminal_and_wire_v2">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">split_terminal_and_wire_v2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color_cloud_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.split_terminal_and_wire_v2" title="Link to this definition"></a></dt>
+<dd><p>This function is the updated version of the split_terminal_and_wire. It</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.track_wire_profile">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">track_wire_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_cloud_wire</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neighbors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_arch_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top2bot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.track_wire_profile" title="Link to this definition"></a></dt>
+<dd><p>This function takes the point cloud of the wire harness as the input, and</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_utils_KIMM.wire_pcd_to_2D">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_utils_KIMM.</span></span><span class="sig-name descname"><span class="pre">wire_pcd_to_2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points_array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_utils_KIMM.wire_pcd_to_2D" title="Link to this definition"></a></dt>
+<dd><p>This function generates a 2D deep map of point cloud</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Wire_harness_detection_utils.html" class="btn btn-neutral float-left" title="Wire_harness_detection_utils module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ETRI.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

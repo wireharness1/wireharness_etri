@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ETRI_FeederDetection module &mdash; Wireharness 1.0.0. documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=58f5e731"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="checker_board_roi_dh module" href="checker_board_roi_dh.html" />
+    <link rel="prev" title="API" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Wireharness
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Wire Harness:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="description/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/getting_start.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/feeder.html">Feeder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/board.html">Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/monitoring.html">Monitoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ETRI_FeederDetection module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection"><code class="docutils literal notranslate"><span class="pre">FeederDetection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.camera_capture"><code class="docutils literal notranslate"><span class="pre">FeederDetection.camera_capture()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.classify_cable"><code class="docutils literal notranslate"><span class="pre">FeederDetection.classify_cable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.convert_zdf2data"><code class="docutils literal notranslate"><span class="pre">FeederDetection.convert_zdf2data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.detect_main"><code class="docutils literal notranslate"><span class="pre">FeederDetection.detect_main()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.display_inlier_outlier"><code class="docutils literal notranslate"><span class="pre">FeederDetection.display_inlier_outlier()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.find_boundary_and_vector_point"><code class="docutils literal notranslate"><span class="pre">FeederDetection.find_boundary_and_vector_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.find_picking_point"><code class="docutils literal notranslate"><span class="pre">FeederDetection.find_picking_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.get_connector_roi"><code class="docutils literal notranslate"><span class="pre">FeederDetection.get_connector_roi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.init_detector"><code class="docutils literal notranslate"><span class="pre">FeederDetection.init_detector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.load_model"><code class="docutils literal notranslate"><span class="pre">FeederDetection.load_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.o3d_dbscan_clustering"><code class="docutils literal notranslate"><span class="pre">FeederDetection.o3d_dbscan_clustering()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.poly_to_o3d"><code class="docutils literal notranslate"><span class="pre">FeederDetection.poly_to_o3d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.predict"><code class="docutils literal notranslate"><span class="pre">FeederDetection.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.predict_single_image"><code class="docutils literal notranslate"><span class="pre">FeederDetection.predict_single_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.read_parameter"><code class="docutils literal notranslate"><span class="pre">FeederDetection.read_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.result_save"><code class="docutils literal notranslate"><span class="pre">FeederDetection.result_save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.set_camera_calib_params"><code class="docutils literal notranslate"><span class="pre">FeederDetection.set_camera_calib_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.set_roi"><code class="docutils literal notranslate"><span class="pre">FeederDetection.set_roi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.show_pcd"><code class="docutils literal notranslate"><span class="pre">FeederDetection.show_pcd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.sk_dbscan_clustering"><code class="docutils literal notranslate"><span class="pre">FeederDetection.sk_dbscan_clustering()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ETRI_FeederDetection.FeederDetection.statical_outlier_removal"><code class="docutils literal notranslate"><span class="pre">FeederDetection.statical_outlier_removal()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ETRI_FeederDetection.measure_time"><code class="docutils literal notranslate"><span class="pre">measure_time()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html">checker_board_roi_dh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_collect.html">data_collect module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efficientNetWire.html">efficientNetWire module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh.html">LineMesh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh_utils.html">LineMesh_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Terminal_matching_v3.html">Terminal_matching_v3 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_functions.html">Wire_harness_detection_functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html">Wire_harness_detection_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html">Wire_harness_detection_utils_KIMM module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Wireharness</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">API</a></li>
+      <li class="breadcrumb-item active">ETRI_FeederDetection module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ETRI_FeederDetection.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ETRI_FeederDetection">
+<span id="etri-feederdetection-module"></span><h1>ETRI_FeederDetection module<a class="headerlink" href="#module-ETRI_FeederDetection" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ETRI_FeederDetection.</span></span><span class="sig-name descname"><span class="pre">FeederDetection</span></span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.camera_capture">
+<span class="sig-name descname"><span class="pre">camera_capture</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.camera_capture" title="Link to this definition"></a></dt>
+<dd><p>Captures a frame from the camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Captured frame.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Zivid.Frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.classify_cable">
+<span class="sig-name descname"><span class="pre">classify_cable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd_clusters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_clusters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nCableID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_prediction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.classify_cable" title="Link to this definition"></a></dt>
+<dd><p>Classifies cables based on the given clusters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd_clusters</strong> (<em>list</em>) – List of point cloud clusters.</p></li>
+<li><p><strong>img_clusters</strong> (<em>list</em>) – List of image clusters.</p></li>
+<li><p><strong>nCableID</strong> (<em>int</em>) – Cable ID.</p></li>
+<li><p><strong>show_prediction</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to show predictions. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of matching point clouds and images.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.convert_zdf2data">
+<span class="sig-name descname"><span class="pre">convert_zdf2data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.convert_zdf2data" title="Link to this definition"></a></dt>
+<dd><p>Converts ZDF frame to data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame</strong> – Zivid frame.</p></li>
+<li><p><strong>mode</strong> (<em>str</em><em>, </em><em>optional</em>) – Mode of operation. Options are ‘capture’, ‘read’, ‘collect’. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Point cloud, BGR image, and depth map.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.detect_main">
+<span class="sig-name descname"><span class="pre">detect_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nCableID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nArea</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.detect_main" title="Link to this definition"></a></dt>
+<dd><p>Main detection function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p></li>
+<li><p><strong>nPlateID</strong> (<em>int</em>) – Board number.</p></li>
+<li><p><strong>nCableID</strong> (<em>int</em>) – Cable ID.</p></li>
+<li><p><strong>nLength1</strong> (<em>float</em>) – Length parameter 1.</p></li>
+<li><p><strong>nLength2</strong> (<em>float</em>) – Length parameter 2.</p></li>
+<li><p><strong>nArea</strong> (<em>float</em>) – Area parameter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Detection results.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.display_inlier_outlier">
+<span class="sig-name descname"><span class="pre">display_inlier_outlier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cloud</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.display_inlier_outlier" title="Link to this definition"></a></dt>
+<dd><p>Displays inlier and outlier points in different colors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cloud</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p></li>
+<li><p><strong>ind</strong> (<em>list</em>) – Indices of inliers.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.find_boundary_and_vector_point">
+<span class="sig-name descname"><span class="pre">find_boundary_and_vector_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcd_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nArea</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.find_boundary_and_vector_point" title="Link to this definition"></a></dt>
+<dd><p>Finds the boundary and vector point in a point cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p></li>
+<li><p><strong>pcd_points</strong> (<em>np.array</em>) – Array of point cloud points.</p></li>
+<li><p><strong>min_x</strong> (<em>float</em>) – Minimum x value.</p></li>
+<li><p><strong>nLength</strong> (<em>float</em>) – Length parameter.</p></li>
+<li><p><strong>nArea</strong> (<em>float</em>) – Area parameter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Picking point and vector point.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.find_picking_point">
+<span class="sig-name descname"><span class="pre">find_picking_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nArea</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_result</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.find_picking_point" title="Link to this definition"></a></dt>
+<dd><p>Finds the picking points in a point cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p></li>
+<li><p><strong>nLength1</strong> (<em>float</em>) – Length parameter 1.</p></li>
+<li><p><strong>nLength2</strong> (<em>float</em>) – Length parameter 2.</p></li>
+<li><p><strong>nArea</strong> (<em>float</em>) – Area parameter.</p></li>
+<li><p><strong>show_result</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to show the result. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Picking points and vector points.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.get_connector_roi">
+<span class="sig-name descname"><span class="pre">get_connector_roi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nCableID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pcd_clusters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.get_connector_roi" title="Link to this definition"></a></dt>
+<dd><p>Gets the region of interest (ROI) for connectors and cables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nPlateID</strong> (<em>int</em>) – Board number.</p></li>
+<li><p><strong>nCableID</strong> (<em>int</em>) – Cable ID.</p></li>
+<li><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p></li>
+<li><p><strong>*pcd_clusters</strong> – Clustered point clouds.</p></li>
+<li><p><strong>zoom</strong> (<em>optional</em>) – Zoom parameter. Defaults to None.</p></li>
+<li><p><strong>rotate</strong> (<em>optional</em>) – Rotate parameter. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of point clouds and corresponding images for connectors.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.init_detector">
+<span class="sig-name descname"><span class="pre">init_detector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ENV</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.init_detector" title="Link to this definition"></a></dt>
+<dd><p>Initializes the detector by reading parameters and loading the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ENV</strong> (<em>str</em>) – Test environment. Options are “KIMM” or “ETRI”.</p></li>
+<li><p><strong>nPlateID</strong> (<em>int</em>) – Board number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.load_model">
+<span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.load_model" title="Link to this definition"></a></dt>
+<dd><p>Loads the model and necessary components for detection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nPlateID</strong> (<em>int</em>) – Board number.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Model, transform, device, and classes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.o3d_dbscan_clustering">
+<span class="sig-name descname"><span class="pre">o3d_dbscan_clustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points_dbscan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.o3d_dbscan_clustering" title="Link to this definition"></a></dt>
+<dd><p>Performs DBSCAN clustering on a point cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – Maximum distance between points in a cluster.</p></li>
+<li><p><strong>min_points_dbscan</strong> (<em>int</em>) – Minimum number of points to form a cluster.</p></li>
+<li><p><strong>min_points</strong> (<em>int</em>) – Minimum number of points for a valid cluster.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of point cloud clusters and corresponding images.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.poly_to_o3d">
+<span class="sig-name descname"><span class="pre">poly_to_o3d</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.poly_to_o3d" title="Link to this definition"></a></dt>
+<dd><p>Converts PolyData to Open3D point cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>poly_pcd</strong> (<em>pyvista.PolyData</em>) – PolyData point cloud.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Open3D point cloud.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>open3d.geometry.PointCloud</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.predict" title="Link to this definition"></a></dt>
+<dd><p>Predicts the classes and probabilities for a list of images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>images</strong> (<em>list</em>) – List of input images.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of predicted classes and probabilities.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.predict_single_image">
+<span class="sig-name descname"><span class="pre">predict_single_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.predict_single_image" title="Link to this definition"></a></dt>
+<dd><p>Predicts the class and probability for a single image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image</strong> (<em>PIL.Image</em>) – Input image.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Predicted class and probability.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.read_parameter">
+<span class="sig-name descname"><span class="pre">read_parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.read_parameter" title="Link to this definition"></a></dt>
+<dd><p>Reads parameter file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – Path to the parameter file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parameters read from the YAML file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.result_save">
+<span class="sig-name descname"><span class="pre">result_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nCableID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">result_pcds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.result_save" title="Link to this definition"></a></dt>
+<dd><p>Saves the detection results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nPlateID</strong> (<em>int</em>) – Board number.</p></li>
+<li><p><strong>nCableID</strong> (<em>int</em>) – Cable ID.</p></li>
+<li><p><strong>end_time</strong> (<em>float</em>) – End time of the detection.</p></li>
+<li><p><strong>result</strong> (<em>tuple</em>) – Detection results.</p></li>
+<li><p><strong>*result_pcds</strong> – Result point clouds.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.set_camera_calib_params">
+<span class="sig-name descname"><span class="pre">set_camera_calib_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intrinsic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distortion</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.set_camera_calib_params" title="Link to this definition"></a></dt>
+<dd><p>Sets the camera calibration parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>intrinsic</strong> (<em>np.array</em>) – Intrinsic parameters.</p></li>
+<li><p><strong>distortion</strong> (<em>np.array</em>) – Distortion parameters.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.set_roi">
+<span class="sig-name descname"><span class="pre">set_roi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.set_roi" title="Link to this definition"></a></dt>
+<dd><p>Sets the region of interest (ROI) for a point cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Filtered point cloud based on ROI.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>open3d.geometry.PointCloud</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.show_pcd">
+<span class="sig-name descname"><span class="pre">show_pcd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pcds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edit_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.show_pcd" title="Link to this definition"></a></dt>
+<dd><p>Displays the point clouds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*pcds</strong> – Point clouds to display.</p></li>
+<li><p><strong>edit_mode</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to enable editing mode. Defaults to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.sk_dbscan_clustering">
+<span class="sig-name descname"><span class="pre">sk_dbscan_clustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points_dbscan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.sk_dbscan_clustering" title="Link to this definition"></a></dt>
+<dd><p>Performs DBSCAN clustering using scikit-learn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – Maximum distance between points in a cluster.</p></li>
+<li><p><strong>min_points_dbscan</strong> (<em>int</em>) – Minimum number of points to form a cluster.</p></li>
+<li><p><strong>min_points</strong> (<em>int</em>) – Minimum number of points for a valid cluster.</p></li>
+<li><p><strong>show_img</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to show images. Defaults to False.</p></li>
+<li><p><strong>zoom</strong> (<em>optional</em>) – Zoom parameter. Defaults to None.</p></li>
+<li><p><strong>rotate</strong> (<em>optional</em>) – Rotate parameter. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of point cloud clusters and corresponding images.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.FeederDetection.statical_outlier_removal">
+<span class="sig-name descname"><span class="pre">statical_outlier_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.FeederDetection.statical_outlier_removal" title="Link to this definition"></a></dt>
+<dd><p>Removes statistical outliers from a point cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p></li>
+<li><p><strong>nb</strong> (<em>int</em>) – Number of neighbors to analyze for each point.</p></li>
+<li><p><strong>std</strong> (<em>float</em>) – Standard deviation multiplier.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Cleaned point cloud and inlier indices.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ETRI_FeederDetection.measure_time">
+<span class="sig-prename descclassname"><span class="pre">ETRI_FeederDetection.</span></span><span class="sig-name descname"><span class="pre">measure_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ETRI_FeederDetection.measure_time" title="Link to this definition"></a></dt>
+<dd><p>Decorator to measure the execution time of a function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>func</strong> (<em>function</em>) – The function to measure.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The wrapped function.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="checker_board_roi_dh.html" class="btn btn-neutral float-right" title="checker_board_roi_dh module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ETRI.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

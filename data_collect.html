@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>data_collect module &mdash; Wireharness 1.0.0. documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=58f5e731"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="efficientNetWire module" href="efficientNetWire.html" />
+    <link rel="prev" title="checker_board_roi_dh module" href="checker_board_roi_dh.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Wireharness
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Wire Harness:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="description/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/getting_start.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/feeder.html">Feeder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/board.html">Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/monitoring.html">Monitoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ETRI_FeederDetection.html">ETRI_FeederDetection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html">checker_board_roi_dh module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">data_collect module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data_collect.DataCollect"><code class="docutils literal notranslate"><span class="pre">DataCollect</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#data_collect.DataCollect.collect_data"><code class="docutils literal notranslate"><span class="pre">DataCollect.collect_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data_collect.DataCollect.data_collect"><code class="docutils literal notranslate"><span class="pre">DataCollect.data_collect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data_collect.DataCollect.img_augment"><code class="docutils literal notranslate"><span class="pre">DataCollect.img_augment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data_collect.DataCollect.initUi"><code class="docutils literal notranslate"><span class="pre">DataCollect.initUi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data_collect.DataCollect.save_images"><code class="docutils literal notranslate"><span class="pre">DataCollect.save_images()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data_collect.DataCollect.set_path"><code class="docutils literal notranslate"><span class="pre">DataCollect.set_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data_collect.DataCollect.sk_dbscan_clustering"><code class="docutils literal notranslate"><span class="pre">DataCollect.sk_dbscan_clustering()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="efficientNetWire.html">efficientNetWire module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh.html">LineMesh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh_utils.html">LineMesh_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Terminal_matching_v3.html">Terminal_matching_v3 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_functions.html">Wire_harness_detection_functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html">Wire_harness_detection_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html">Wire_harness_detection_utils_KIMM module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Wireharness</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">API</a></li>
+      <li class="breadcrumb-item active">data_collect module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/data_collect.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-data_collect">
+<span id="data-collect-module"></span><h1>data_collect module<a class="headerlink" href="#module-data_collect" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="data_collect.DataCollect">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">data_collect.</span></span><span class="sig-name descname"><span class="pre">DataCollect</span></span><a class="headerlink" href="#data_collect.DataCollect" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QMainWindow</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Ui_MainWindow</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="data_collect.DataCollect.collect_data">
+<span class="sig-name descname"><span class="pre">collect_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_collect.DataCollect.collect_data" title="Link to this definition"></a></dt>
+<dd><p>Collect data using the selected camera and parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_collect.DataCollect.data_collect">
+<span class="sig-name descname"><span class="pre">data_collect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depthmap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPlateID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nCableID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLength2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nArea</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_collect.DataCollect.data_collect" title="Link to this definition"></a></dt>
+<dd><p>Main detection function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p></li>
+<li><p><strong>rgb</strong> (<em>numpy.ndarray</em>) – RGB image data.</p></li>
+<li><p><strong>depthmap</strong> (<em>numpy.ndarray</em>) – Depth map data.</p></li>
+<li><p><strong>nPlateID</strong> (<em>int</em>) – Board number.</p></li>
+<li><p><strong>nCableID</strong> (<em>int</em>) – Cable ID.</p></li>
+<li><p><strong>nLength1</strong> (<em>float</em>) – Length parameter 1.</p></li>
+<li><p><strong>nLength2</strong> (<em>float</em>) – Length parameter 2.</p></li>
+<li><p><strong>nArea</strong> (<em>float</em>) – Area parameter.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_collect.DataCollect.img_augment">
+<span class="sig-name descname"><span class="pre">img_augment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nCableID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_collect.DataCollect.img_augment" title="Link to this definition"></a></dt>
+<dd><p>Perform image augmentation on the collected images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nCableID</strong> (<em>int</em>) – Cable ID.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_collect.DataCollect.initUi">
+<span class="sig-name descname"><span class="pre">initUi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_collect.DataCollect.initUi" title="Link to this definition"></a></dt>
+<dd><p>Initialize the UI components and their event handlers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_collect.DataCollect.save_images">
+<span class="sig-name descname"><span class="pre">save_images</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPlatedId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cable_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downsample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">images</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_collect.DataCollect.save_images" title="Link to this definition"></a></dt>
+<dd><p>Save images to the specified directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_path</strong> (<em>str</em>) – Path to save directory.</p></li>
+<li><p><strong>nPlatedId</strong> (<em>int</em>) – Plate ID.</p></li>
+<li><p><strong>cable_id</strong> (<em>int</em>) – Cable ID.</p></li>
+<li><p><strong>downsample</strong> (<em>str</em>) – Downsample type.</p></li>
+<li><p><strong>save_time</strong> (<em>str</em>) – Time when saving the images.</p></li>
+<li><p><strong>images</strong> (<em>list</em>) – List of images to save.</p></li>
+<li><p><strong>prefix</strong> (<em>str</em>) – Prefix for the file name.</p></li>
+<li><p><strong>zoom</strong> (<em>int</em>) – Zoom level.</p></li>
+<li><p><strong>rotate</strong> (<em>int</em>) – Rotate angle.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_collect.DataCollect.set_path">
+<span class="sig-name descname"><span class="pre">set_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_collect.DataCollect.set_path" title="Link to this definition"></a></dt>
+<dd><p>Open a file dialog to select the directory for data storage.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_collect.DataCollect.sk_dbscan_clustering">
+<span class="sig-name descname"><span class="pre">sk_dbscan_clustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points_dbscan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_collect.DataCollect.sk_dbscan_clustering" title="Link to this definition"></a></dt>
+<dd><p>Perform DBSCAN clustering on the point cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcd</strong> (<em>open3d.geometry.PointCloud</em>) – Point cloud.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – DBSCAN epsilon parameter.</p></li>
+<li><p><strong>min_points_dbscan</strong> (<em>int</em>) – Minimum points for DBSCAN.</p></li>
+<li><p><strong>min_points</strong> (<em>int</em>) – Minimum points in a cluster.</p></li>
+<li><p><strong>show_img</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to show images. Defaults to False.</p></li>
+<li><p><strong>zoom</strong> (<em>int</em><em>, </em><em>optional</em>) – Zoom level. Defaults to None.</p></li>
+<li><p><strong>rotate</strong> (<em>int</em><em>, </em><em>optional</em>) – Rotate angle. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Clustered point clouds and images.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="checker_board_roi_dh.html" class="btn btn-neutral float-left" title="checker_board_roi_dh module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="efficientNetWire.html" class="btn btn-neutral float-right" title="efficientNetWire module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ETRI.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wire_harness_detection_functions module &mdash; Wireharness 1.0.0. documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=58f5e731"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Wire_harness_detection_utils module" href="Wire_harness_detection_utils.html" />
+    <link rel="prev" title="Terminal_matching_v3 module" href="Terminal_matching_v3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Wireharness
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Wire Harness:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="description/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/getting_start.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/feeder.html">Feeder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/board.html">Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description/monitoring.html">Monitoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ETRI_FeederDetection.html">ETRI_FeederDetection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker_board_roi_dh.html">checker_board_roi_dh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_collect.html">data_collect module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efficientNetWire.html">efficientNetWire module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh.html">LineMesh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LineMesh_utils.html">LineMesh_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Terminal_matching_v3.html">Terminal_matching_v3 module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Wire_harness_detection_functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_functions.Convert_to_poses"><code class="docutils literal notranslate"><span class="pre">Convert_to_poses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_functions.Detect_D1C1_wire_onboard"><code class="docutils literal notranslate"><span class="pre">Detect_D1C1_wire_onboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_functions.Detect_D1C2_wire_onboard"><code class="docutils literal notranslate"><span class="pre">Detect_D1C2_wire_onboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_functions.Detect_wire_v2"><code class="docutils literal notranslate"><span class="pre">Detect_wire_v2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Wire_harness_detection_functions.ROI_center_extraction"><code class="docutils literal notranslate"><span class="pre">ROI_center_extraction()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils.html">Wire_harness_detection_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wire_harness_detection_utils_KIMM.html">Wire_harness_detection_utils_KIMM module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Wireharness</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">API</a></li>
+      <li class="breadcrumb-item active">Wire_harness_detection_functions module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Wire_harness_detection_functions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Wire_harness_detection_functions">
+<span id="wire-harness-detection-functions-module"></span><h1>Wire_harness_detection_functions module<a class="headerlink" href="#module-Wire_harness_detection_functions" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_functions.Convert_to_poses">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_functions.</span></span><span class="sig-name descname"><span class="pre">Convert_to_poses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd_branch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cloud</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grasp_pose</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_functions.Convert_to_poses" title="Link to this definition"></a></dt>
+<dd><p>This function transforms a point cloud branch using given robot poses for capturing and grasping.
+It calculates the center and end points of the profile and determines the vector between them,
+aligning the profile with the robot’s grasp direction.</p>
+<dl class="simple">
+<dt>Input:</dt><dd><p>pcd_branch: The point cloud representing the branch to be transformed.
+cloud: Additional point cloud data (purpose not detailed in the function).
+capture_pose: The pose matrix representing the robot’s capture position.
+grasp_pose: The pose matrix representing the robot’s grasp position.</p>
+</dd>
+<dt>Output:</dt><dd><p>pcd_branch: The transformed point cloud after applying the capture pose.
+profile_center: The centroid of the cropped point cloud representing the profile’s center.
+profile_center_to_end_vec: The normalized vector from the profile center to the profile end.
+profile_vector_len: The length of the vector from the profile center to the profile end.
+cloud: The additional point cloud data (passed through unchanged).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_functions.Detect_D1C1_wire_onboard">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_functions.</span></span><span class="sig-name descname"><span class="pre">Detect_D1C1_wire_onboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_functions.Detect_D1C1_wire_onboard" title="Link to this definition"></a></dt>
+<dd><p>This function is for tracking the wire profile specified for D1C1 and now
+replaced by function Detect_wire_v2.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_functions.Detect_D1C2_wire_onboard">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_functions.</span></span><span class="sig-name descname"><span class="pre">Detect_D1C2_wire_onboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ply_link</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_functions.Detect_D1C2_wire_onboard" title="Link to this definition"></a></dt>
+<dd><p>This function is for 3D point clouds captured from D1C2 type, which have multiple
+branches and terminals existing in the input point clouds. After eliminating the background,
+it will apply color classification and then, split the parts of terminals and wires. Next, it
+will classify the terminals to know which colors to use for each branch. Finally, it will track
+each branch’s profile.</p>
+<dl class="simple">
+<dt>Input:</dt><dd><p>ply_link: The local directory of the input point cloud.
+visualize: If you want to see the detected profile =&gt;, else =&gt; 0.</p>
+</dd>
+<dt>Output:</dt><dd><p>pcd_terminal_official: List of the point cloud of the terminals detected
+pcd_braches: List of the  point cloud of the wire profile detected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_functions.Detect_wire_v2">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_functions.</span></span><span class="sig-name descname"><span class="pre">Detect_wire_v2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wire_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'D1C1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_functions.Detect_wire_v2" title="Link to this definition"></a></dt>
+<dd><p>This function is for tracking the wire profile on the inputed point cloud from the 3D camera.
+Firstly, the background will be eliminated based on multiple-plane detection. Then, the color
+classification model is applied to collect the points having colors corresponding to the target
+wire type. Finally, the wire profile is applied using the developed tracking method.</p>
+<dl class="simple">
+<dt>Input:</dt><dd><p>pcd: The input point cloud from 3D camera.
+wire_type: The target wire type.
+visualize: If you want to see the detected profile =&gt;, else =&gt; 0.</p>
+</dd>
+<dt>Output:</dt><dd><p>pcd_branch: Profile of the wire point cloud
+cloud: Wire point cloud extracted</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Wire_harness_detection_functions.ROI_center_extraction">
+<span class="sig-prename descclassname"><span class="pre">Wire_harness_detection_functions.</span></span><span class="sig-name descname"><span class="pre">ROI_center_extraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcd_profile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Wire_harness_detection_functions.ROI_center_extraction" title="Link to this definition"></a></dt>
+<dd><p>This function extracts the center of a Region of Interest (ROI) from a point cloud.
+It calculates the centroid of points within a specified radius around an input point.</p>
+<dl class="simple">
+<dt>Input:</dt><dd><p>pcd_profile: The input point cloud from which the ROI is extracted.
+input_point: The center point (x, y, z) around which the ROI is defined.
+radius: The radius defining the extent of the ROI around the input point.</p>
+</dd>
+<dt>Output:</dt><dd><p>[x_cen, y_cen, z_cen]: The centroid coordinates of the ROI within the specified radius.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Terminal_matching_v3.html" class="btn btn-neutral float-left" title="Terminal_matching_v3 module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Wire_harness_detection_utils.html" class="btn btn-neutral float-right" title="Wire_harness_detection_utils module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ETRI.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
